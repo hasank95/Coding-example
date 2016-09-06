@@ -1,0 +1,57 @@
+@font-face {
+    font-family: myFont;
+    src: url(deftonestylus.ttf);
+}
+
+.marginTop {
+    margin-top: 10px;
+}
+
+#form {
+    font-family: serif;
+}
+
+
+.pad {
+    padding-left: 30px;
+}
+
+.main {
+    font-family: myFont;
+    color: firebrick;
+    font-weight: bolder;
+    border-bottom: 6px solid red;
+    background-color: lightgrey;
+    border-radius: 5px;
+}
+
+.pad1 {
+    padding-left: 52px;
+}
+
+.main1 {
+    padding-left: 100px;
+}
+
+.marginTop1 {
+    margin-top: 40px;
+}
+
+.addMargin {
+    margin-top: 110px;
+}
+
+.but1 {
+    margin-top: 45px;
+}
+
+.but2 {
+    position: fixed;
+    z-index: 11;
+    right: 35px;
+}
+
+.bold {
+    font-size: 17px;
+}
+

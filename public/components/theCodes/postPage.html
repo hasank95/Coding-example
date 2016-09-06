@@ -1,0 +1,34 @@
+<button class="btn-lg btn-danger but2" onclick="location.href='#/'">Return Home</button>
+
+<div class="col-xs-offset-4 col-xs-10">
+    <div class="row" id="marginTop">
+        <div class="col-xs-4">
+            <h3 id="form" class="main">Add Question And Your Code Here:(Required Inputs*)</h3>
+            <input type="text" ng-model="newPost.question" class="form-control" placeholder="Enter Your Question*">
+        </div>
+    </div>
+    
+    <div class="row col-xs-4 marginTop">
+        <textarea ng-model="newPost.code" class="form-control" placeholder="Enter Your Code*"></textarea>
+        <input type="button" value="Post" ng-click="addPost(newPost)" class="marginTop btn btn-warning col-xs-12">
+    </div>
+</div>
+
+<div class="col-xs-offset-3 row" ng-repeat="post in CodingService.postsList track by $index" on-finish-render="ngRepeatFinished">
+    <div class="panel panel-default col-xs-8 marginTop1">
+        <div class="panel-body">
+            <h4><code>{{post.question}}</code></h4>
+            <pre class="bold language-javascript"><code class="language-javascript">{{post.code}}</code></pre>
+    
+
+            <button type="button" class="btn btn-success btn-xs" ng-click="deletePost(post, $index)">Remove Post</button>
+            <textarea class="form-control marginTop" ng-model="post.newComment"></textarea>
+            <button type="button" class="btn btn-danger marginTop btn-xs" ng-click="addComment(post, $index)">Comment</button>
+            <div class="marginTop">
+                <code>Comments:</code>
+                <pre ng-repeat="comment in post.comments track by $index">{{comment}}<button class="btn btn-danger btn-xs pull-right" type="button" ng-click="deleteComment(post, $parent.$index, $index)"> <span class="glyphicon glyphicon-trash"></span></button></pre>
+            </div>
+        </div>
+    </div>
+</div>
+
